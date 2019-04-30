@@ -1,5 +1,4 @@
 <?php
-use App\Http\Middleware\CheckAge;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('/check', function () {
     return redirect('adultes');
-})->middleware(CheckAge::class);
+})->middleware('age');
 
 Route::get('/enfants', function(){
     return view('enfants');
